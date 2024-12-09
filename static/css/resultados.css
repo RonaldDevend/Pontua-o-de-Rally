@@ -1,0 +1,156 @@
+/* Resetando estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Efeito de levitação */
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilos da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden; /* Para aplicar bordas arredondadas */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra para destacar a tabela */
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+table th {
+    background: linear-gradient(135deg, #007BFF, #0056b3); /* Gradiente para cabeçalho */
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table td {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    color: #fff;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linhas discretas */
+}
+
+/* Linhas alternadas da tabela */
+table tr:nth-child(even) td {
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo levemente mais claro */
+}
+
+/* Aumento da fonte para o nome do grupo */
+table td:first-child {
+    font-size: 1.5rem; /* Aumento para destaque */
+    font-weight: bold;
+    color: #FF5F6D; /* Vermelho vibrante para destaque */
+}
+
+/* Efeitos de hover na tabela */
+table tr:hover td {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02); /* Leve aumento */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botão de voltar para a home */
+.back-btn {
+    display: block;
+    width: 220px;
+    margin: 30px auto 0;
+    background: linear-gradient(135deg, #FF5F6D, #FFC371); /* Gradiente vibrante */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #FFC371, #FF5F6D); /* Inversão do gradiente */
+    transform: translateY(-5px);
+}
+
+.back-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+
+    .back-btn {
+        width: 180px;
+        font-size: 1rem;
+    }
+}

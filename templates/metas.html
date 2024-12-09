@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/metas.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Metas Cadastradas</h1>
+        
+        <form method="POST" class="form">
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" placeholder="Digite a descrição da meta" required>
+            
+            <label for="pontuacao">Pontuação:</label>
+            <input type="number" name="pontuacao" placeholder="Digite a pontuação da meta" required>
+            
+            <button type="submit" class="submit-btn">Adicionar Meta</button>
+        </form>
+
+        <h2>Metas Existentes</h2>
+        <ul class="meta-list">
+            {% for meta in metas %}
+                <li class="meta-item">
+                    <span class="meta-text">{{ meta.descricao }} - {{ meta.pontuacao }} pontos</span>
+                    <div class="actions">
+                        <a href="{{ url_for('editar_meta', id=meta.id) }}" class="edit">Editar</a> | 
+                        <a href="{{ url_for('excluir_meta', id=meta.id) }}" class="delete">Excluir</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        
+        <a href="{{ url_for('home') }}" class="back-btn">Voltar para a Home</a>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/editar_meta.css') }}">
+    <title>Editar Meta</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Meta</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <input type="text" name="descricao" value="{{ meta.descricao }}" required>
+            </div>
+            <div class="form-group">
+                <label for="pontuacao">Pontuação:</label>
+                <input type="number" name="pontuacao" value="{{ meta.pontuacao }}" required>
+            </div>
+            <button type="submit" class="btn-submit">Salvar</button>
+        </form>
+        <a href="{{ url_for('metas') }}" class="btn-back">Voltar</a>
+    </div>
+</body>
+</html>

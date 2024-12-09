@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontuação Semanal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rally das Tribos</h1>
+        <p>Metas semanais e pontuação do Rally.</p>
+        
+        <div class="buttons">
+            <a href="/metas" class="btn">Metas Semanais<a>
+            <a href="/pontuacao" class="btn">Pontuação Semanal</a>
+            <a href="/resultados" class="btn">Ver Resultados</a>
+        </div>
+        
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="btn logout-btn">Sair</a>
+        </div>
+    </div>
+</body>
+</html>
