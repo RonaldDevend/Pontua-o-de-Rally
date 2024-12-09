@@ -8,7 +8,7 @@
 /* Corpo da página */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -23,16 +23,16 @@ body {
     max-width: 900px;
     margin: 50px auto;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
 .container:hover {
-    transform: translateY(-5px); /* Efeito de levitação */
+    transform: translateY(-5px);
 }
 
 /* Títulos */
@@ -43,7 +43,7 @@ h1, h2 {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo do formulário */
@@ -56,7 +56,7 @@ label {
     font-weight: bold;
     margin-bottom: 8px;
     display: block;
-    color: #ddd; /* Cor suave para labels */
+    color: #ddd;
 }
 
 input[type="text"], input[type="number"] {
@@ -75,14 +75,14 @@ input[type="text"], input[type="number"] {
 input[type="text"]:focus, input[type="number"]:focus {
     border-color: #FF5F6D;
     outline: none;
-    background-color: rgba(255, 95, 109, 0.1); /* Fundo leve de vermelho */
+    background-color: rgba(255, 95, 109, 0.1);
 }
 
 /* Botão de adicionar pontuação */
 button.submit-btn {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59); /* Gradiente vibrante */
+    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -95,8 +95,8 @@ button.submit-btn {
 }
 
 button.submit-btn:hover {
-    background: linear-gradient(135deg, #f64f59, #c471ed, #12c2e9); /* Inversão do gradiente */
-    transform: translateY(-5px) scale(1.05); /* Levitação com zoom */
+    background: linear-gradient(135deg, #f64f59, #c471ed, #12c2e9);
+    transform: translateY(-5px) scale(1.05);
 }
 
 button.submit-btn:active {
@@ -119,7 +119,7 @@ button.submit-btn:active {
     align-items: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease-in-out;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
 }
 
@@ -182,14 +182,34 @@ button.submit-btn:active {
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 15px;
     }
 
     h1, h2 {
         font-size: 2rem;
     }
 
-    input[type="text"], input[type="number"], button.submit-btn {
+    .meta-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meta-text {
         font-size: 1rem;
+    }
+
+    .actions a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    button.submit-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
