@@ -182,34 +182,51 @@ button.submit-btn:active {
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
-        padding: 15px;
+        padding: 10px; /* Reduz o padding para caber na tela */
     }
 
     h1, h2 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Reduz o tamanho dos títulos */
+        margin-bottom: 15px;
     }
 
     .meta-item {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Força os itens a ficarem em coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+        text-align: left; /* Garante que o texto fique alinhado à esquerda */
+        padding: 10px; /* Reduz o padding */
     }
 
     .meta-text {
-        font-size: 1rem;
+        font-size: 1rem; /* Ajusta o tamanho da fonte */
+        word-wrap: break-word; /* Permite quebra de palavras longas */
+        overflow-wrap: break-word; /* Força palavras longas a se ajustarem */
+        width: 100%; /* Garante que o texto use o espaço disponível */
+    }
+
+    .actions {
+        margin-top: 10px;
     }
 
     .actions a {
-        display: block;
-        margin-bottom: 10px;
+        display: block; /* Coloca os botões em linha separada */
+        margin-bottom: 5px;
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
     }
 
     button.submit-btn {
         font-size: 1rem;
-        padding: 10px;
+        padding: 10px; /* Ajusta o padding do botão */
     }
 
     input[type="text"], input[type="number"] {
         padding: 10px;
         font-size: 0.9rem;
+    }
+
+    /* Ajusta o botão de voltar */
+    .back-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
     }
 }
