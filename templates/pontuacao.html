@@ -9,24 +9,33 @@
 <body>
     <div class="container">
         <h1>Pontuação dos Grupos</h1>
-        
-        <form method="POST">
+
+        <!-- Formulário para adicionar pontuação -->
+        <form method="POST" action="{{ url_for('adicionar_pontuacao') }}">
             <label for="grupo">Grupo:</label>
-            <input type="text" name="grupo" required>
+            <input type="text" id="grupo" name="grupo" required>
             <label for="pontos">Pontos:</label>
-            <input type="number" name="pontos" required>
+            <input type="number" id="pontos" name="pontos" required>
             <button type="submit" class="submit-btn">Adicionar Pontuação</button>
         </form>
 
-        <h2>Pontuação Existente</h2>
+        <!-- Lista de pontuações -->
+        <h2>Pontuação Atual</h2>
         <ul class="meta-list">
             {% for pontuacao in pontuacoes %}
                 <li class="meta-item">
-                    <span class="meta-text">{{ pontuacao.grupo }} - {{ pontuacao.pontos }} pontos</span>
+                    <div class="meta-text">
+                        <strong>Grupo:</strong> {{ pontuacao.grupo }} <br>
+                        <strong>Pontos:</strong> {{ pontuacao.pontos }}
+                    </div>
                     <div class="actions">
-                        <a href="{{ url_for('editar_pontuacao', id=pontuacao.id) }}">Editar</a> | 
+                        <a href="{{ url_for('editar_pontuacao', id=pontuacao.id) }}">Editar</a>
                         <a href="{{ url_for('excluir_pontuacao', id=pontuacao.id) }}" class="delete">Excluir</a>
                     </div>
+                </li>
+            {% else %}
+                <li class="meta-item">
+                    <div class="meta-text">Nenhuma pontuação registrada ainda.</div>
                 </li>
             {% endfor %}
         </ul>
