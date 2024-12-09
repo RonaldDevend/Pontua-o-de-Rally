@@ -186,7 +186,7 @@ button.submit-btn:active {
     }
 
     h1, h2 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .meta-item {
@@ -196,12 +196,11 @@ button.submit-btn:active {
 
     .meta-text {
         font-size: 1rem;
-        margin-bottom: 10px;
     }
 
     .actions a {
-        display: inline-block;
-        margin-bottom: 5px;
+        display: block;
+        margin-bottom: 10px;
     }
 
     button.submit-btn {
