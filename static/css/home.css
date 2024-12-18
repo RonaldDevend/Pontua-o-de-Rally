@@ -9,7 +9,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
-    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +19,7 @@ body {
 /* Container principal */
 .container {
     text-align: center;
-    padding: 40px;
+    padding: 100px;
     background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -32,20 +31,20 @@ body {
 
 /* Título */
 h1 {
-    font-size: 3rem;
-    color: #fff;
-    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+    text-shadow: 0 9px 15px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+    position:relative;
+    text-align: center;
 }
 
 /* Texto explicativo */
 p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #d1d1d1;
-    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 9px 15px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+    position:relative;
+    text-align: center;
 }
 
 /* Botões principais */
@@ -53,8 +52,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center; /* Alinha os botões ao centro */
-    gap: 20px; /* Espaçamento consistente entre os botões */
     width: 100%; /* Garante alinhamento central em telas menores */
+
 }
 
 
@@ -63,31 +62,28 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center; /* Alinha os botões ao centro */
-    gap: 15px; /* Espaçamento consistente entre os botões */
+    gap:calc(15px); /* Espaçamento consistente entre os botões */
     width: 100%; /* Garante alinhamento central em telas menores */
 }
 
 /* Botões gerais */
 .btn {
     display: inline-block;
-    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59); /* Gradiente vibrante */
-    color: #fff;
-    padding: 15px 30px;
     text-decoration: none;
     border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center; /* Centraliza o texto dentro do botão */
     width: 100%; /* Faz os botões ocuparem a largura disponível */
-    max-width: 350px; /* Limita a largura máxima */
+    height: 60px;
+    max-width: 600px; /* Limita a largura máxima */
+    
 }
 
 .btn:hover {
-    background: linear-gradient(135deg, #f64f59, #c471ed, #12c2e9); /* Inversão do gradiente */
-    transform: translateY(-5px) scale(1.05); /* Levitação com zoom */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
+    transform: translateY(-10px) scale(1.05); /* Levitação com zoom */
+    box-shadow: 0 6px 20px rgba(194, 194, 194, 0.3);
 }
 
 .btn:active {
@@ -96,7 +92,10 @@ p {
 
 /* Botão de logout */
 .logout-container {
-    margin-top: 20px; /* Espaçamento extra */
+    margin-top: 30px; /* Espaçamento extra */
+    display: block;
+    width: 220px;
+    margin: 30px auto 0;
 }
 
 .logout-btn {

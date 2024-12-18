@@ -37,10 +37,8 @@ body {
 
 /* Títulos */
 h1, h2 {
-    font-size: 2.5rem;
-    color: #fff;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -52,9 +50,9 @@ form {
 }
 
 label {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 1px;
     display: block;
     color: #ddd;
 }
@@ -82,7 +80,7 @@ input[type="text"]:focus, input[type="number"]:focus {
 button.submit-btn {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -92,11 +90,15 @@ button.submit-btn {
     text-transform: uppercase;
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Limita a largura máxima */
+    position: relative;
+    left: 320px;
 }
 
 button.submit-btn:hover {
-    background: linear-gradient(135deg, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
     transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(194, 194, 194, 0.3);
 }
 
 button.submit-btn:active {
@@ -148,7 +150,7 @@ button.submit-btn:active {
 /* Botão de voltar para a home */
 .back-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #FF5F6D, #FF3B2E);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
     color: #fff;
     padding: 15px 25px;
     text-decoration: none;
@@ -157,11 +159,15 @@ button.submit-btn:active {
     text-align: center;
     font-weight: bold;
     transition: all 0.3s ease;
+    max-width: 600px; /* Limita a largura máxima */
+    position: relative;
+    left: 500px;
 }
 
 .back-btn:hover {
-    background: linear-gradient(135deg, #FF3B2E, #FF5F6D);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(194, 194, 194, 0.3);
 }
 
 .back-btn:active {

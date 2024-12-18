@@ -5,30 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/resultados.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Resultados</h1>
+    <div class="container mt-5">
+        <h1 class="mb-4" style="color: rgb(255, 255, 255);">RESULTADO</h1>
 
-        <h2>Pontuação Total por Grupo</h2>
-        <table>
-            <thead>
+        <h2 class="mb-4" style="color: rgb(255, 255, 255);">DO RALLY DAS TRIBOS</h2>
+        
+        <!-- Tabela de Resultados -->
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
                 <tr>
-                    <th>Grupo</th>
-                    <th>Pontuação Total</th>
+                    <th scope="col"; style="text-align: center;">TRIBO</th>
+                    <th scope="col"; style="text-align: center;">Pontuação Total</th>
                 </tr>
             </thead>
             <tbody>
                 {% for grupo, total_pontos in grupos %}
                     <tr>
-                        <td>{{ grupo }}</td>
-                        <td>{{ total_pontos }}</td>
+                        <td style="color: white;">{{ grupo }}</td>
+                        <td style="color: white;">{{ total_pontos }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
 
-        <a href="{{ url_for('home') }}" class="back-btn">Voltar para a Home</a>
+        <!-- Botão Voltar para a Home -->
+
+        <div class="buttom">
+            <a href="{{ url_for('home') }}" class="btn btn-outline-light" style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: 3rem; --bs-btn-font-size: 1rem;">RETORNAR</a>
+        </div>
+
     </div>
+
+
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

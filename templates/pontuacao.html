@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pontuação</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pontuacao.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Pontuação dos Grupos</h1>
+        <h1 style="color: white;">Pontuação das Tribos</h1>
         
         <form method="POST">
             <label for="grupo">Grupo:</label>
@@ -18,7 +19,7 @@
             <button type="submit" class="submit-btn">Adicionar Pontuação</button>
         </form>
 
-        <h2>Pontuação Existente</h2>
+        <h2 style="color: white;">Pontuação Existente</h2>
         <ul class="meta-list">
             {% for pontuacao in pontuacoes %}
                 <li class="meta-item">
