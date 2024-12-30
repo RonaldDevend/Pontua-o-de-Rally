@@ -115,6 +115,8 @@ def pontuacao():
         db.session.add(nova_pontuacao)
         db.session.commit()
 
+        #redddd
+
         # Redireciona para a página de pontuação
         return redirect(url_for('pontuacao'))
 
