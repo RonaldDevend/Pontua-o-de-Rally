@@ -66,7 +66,7 @@ input[type="text"], input[type="number"] {
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */;
     color: #fff;
     transition: all 0.3s ease-in-out;
     backdrop-filter: blur(5px);
@@ -75,14 +75,14 @@ input[type="text"], input[type="number"] {
 input[type="text"]:focus, input[type="number"]:focus {
     border-color: #FF5F6D;
     outline: none;
-    background-color: rgba(255, 95, 109, 0.1);
+    background-color:white;
 }
 
 /* Botão de adicionar meta */
 button.submit-btn {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -95,7 +95,7 @@ button.submit-btn {
 }
 
 button.submit-btn:hover {
-    background: linear-gradient(135deg, #f64f59, #c471ed, #12c2e9);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     transform: translateY(-5px) scale(1.05);
 }
 
@@ -110,7 +110,7 @@ button.submit-btn:active {
 }
 
 .meta-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
@@ -129,7 +129,7 @@ button.submit-btn:active {
 
 .meta-text {
     font-size: 1.2rem;
-    color: #000; /* Cor preta no nome e pontuação */
+    color: white; /* Cor preta no nome e pontuação */
     flex-grow: 1;
 }
 
@@ -141,20 +141,20 @@ button.submit-btn:active {
 
 .actions a {
     text-decoration: none;
-    color: #FF5F6D;
+    color: #ffffff;
     font-weight: bold;
     margin-left: 15px;
     transition: color 0.3s ease;
 }
 
 .actions a:hover {
-    color: #FF3B2E;
+    color: #ffffff;
 }
 
 /* Botão de voltar para a home */
 .back-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #FF5F6D, #FF3B2E);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     color: #fff;
     padding: 15px 25px;
     text-decoration: none;
@@ -166,13 +166,14 @@ button.submit-btn:active {
 }
 
 .back-btn:hover {
-    background: linear-gradient(135deg, #FF3B2E, #FF5F6D);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     transform: translateY(-3px);
 }
 
 .back-btn:active {
     transform: scale(0.98);
 }
+
 
 /* Responsividade */
 @media (max-width: 768px) {

@@ -80,16 +80,6 @@ p {
     
 }
 
-.btn:hover {
-    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
-    transform: translateY(-10px) scale(1.05); /* Levitação com zoom */
-    box-shadow: 0 6px 20px rgba(194, 194, 194, 0.3);
-}
-
-.btn:active {
-    transform: scale(0.98);
-}
-
 /* Botão de logout */
 .logout-container {
     margin-top: 30px; /* Espaçamento extra */
@@ -119,4 +109,30 @@ p {
 
 .logout-btn:active {
     transform: scale(0.95);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15%; /* Reduz o padding em telas menores */
+        width: 100%; /* Garante o uso completo da largura */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho do título */
+    }
+
+    p {
+        font-size: 0.9rem; /* Ajusta o tamanho do texto explicativo */
+    }
+
+    .btn {
+        height: auto; /* Reduz a altura dos botões */
+        font-size: 0.9rem; /* Ajusta o texto dos botões */
+    }
+
+    .logout-btn {
+        padding: 10px 20px; /* Reduz o padding do botão logout */
+        font-size: 0.5rem; /* Ajusta o tamanho do texto */
+    }
 }

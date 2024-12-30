@@ -137,14 +137,14 @@ button.submit-btn:active {
 /* Ações de editar/excluir */
 .actions a {
     text-decoration: none;
-    color: #FF5F6D;
+    color: #ffffff;
     font-weight: bold;
     margin-right: 15px;
     transition: color 0.3s ease;
 }
 
 .actions a:hover {
-    color: #FF3B2E;
+    color: #ffffff;
 }
 
 /* Botão de voltar para a home */
@@ -176,75 +176,54 @@ button.submit-btn:active {
 
 /* Estilos de exclusão */
 .delete {
-    color: #FF5F6D;
+    color: #ffffff;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .delete:hover {
-    color: #d43f00;
+    color: #ffffff;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Reduz o padding para caber na tela */
+        padding: 20px;
     }
 
-    h1, h2 {
-        font-size: 1.8rem; /* Reduz o tamanho dos títulos */
-        margin-bottom: 15px;
+    button.submit-btn, .back-btn {
+        max-width: 100%;
+        left: 0;
     }
 
     .meta-item {
-        flex-direction: row; /* Força os itens a ficarem na mesma linha */
-        justify-content: space-between; /* Coloca o nome/pontuação à esquerda e as ações à direita */
-        align-items: center; /* Garante que os itens fiquem centralizados verticalmente */
-        padding: 10px; /* Reduz o padding */
-        background: transparent; /* Fundo transparente */
-        border: 1px solid rgba(255, 255, 255, 0.2); /* Borda visível para distinguir os itens */
-        box-shadow: none; /* Retira o sombreamento */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .meta-text {
-        font-size: 1rem; /* Ajusta o tamanho da fonte */
-        color: black; /* Cor preta para o texto */
-        word-wrap: break-word; /* Permite quebra de palavras longas */
-        overflow-wrap: break-word; /* Força palavras longas a se ajustarem */
-        width: 100%; /* Garante que o texto use o espaço disponível */
+    label {
+        font-size: 1.2rem;
     }
 
-    .actions {
-        display: flex; /* Garante que as ações fiquem lado a lado */
-        justify-content: flex-end; /* Alinha as ações à direita */
-        gap: 10px; /* Espaçamento entre as ações */
-    }
-
-    .actions a {
-        font-size: 0.9rem; /* Reduz o tamanho da fonte */
-        color: #FF5F6D; /* Cor das ações */
-        font-weight: bold;
-        text-decoration: none; /* Remove o sublinhado */
-        transition: color 0.3s ease;
-    }
-
-    .actions a:hover {
-        color: #FF3B2E; /* Alteração de cor no hover */
-    }
-
-    button.submit-btn {
-        font-size: 1rem;
-        padding: 10px; /* Ajusta o padding do botão */
-    }
-
-    input[type="text"], input[type="number"] {
-        padding: 10px;
+    input[type="text"], input[type="number"], button.submit-btn {
         font-size: 0.9rem;
     }
+}
 
-    /* Ajusta o botão de voltar */
-    .back-btn {
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    label {
         font-size: 1rem;
-        padding: 10px 15px;
+    }
+
+    input[type="text"], input[type="number"], button.submit-btn {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .meta-item {
+        padding: 10px;
     }
 }

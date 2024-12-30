@@ -5,33 +5,38 @@
     box-sizing: border-box;
 }
 
-/* Definindo o fundo azul e o texto branco */
+/* Corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #007BFF; /* Azul no fundo */
-    color: #fff; /* Texto branco */
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Gradiente sofisticado */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
+    color: #fff; /* Texto branco */
 }
 
 /* Container principal */
 .container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    max-width: 500px;
     text-align: center;
+    padding: 50px; /* Ajustado para caber melhor os elementos do formulário */
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
 }
 
+/* Título */
 h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 9px 15px rgba(0, 0, 0, 0.2); /* Sombra do texto */
+    margin-bottom: 30px;
+    color: #fff;
 }
 
 /* Estilização para os campos do formulário */
@@ -42,7 +47,7 @@ h1 {
 
 label {
     font-size: 16px;
-    color: #333;
+    color: #fff; /* Mantém o texto branco */
     margin-bottom: 8px;
     display: block;
 }
@@ -51,45 +56,85 @@ input[type="text"], input[type="number"] {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     font-size: 16px;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #fff; /* Texto branco */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
 }
 
 input[type="text"]:focus, input[type="number"]:focus {
-    border-color: #007BFF;
+    border-color: #00b4d8;
     outline: none;
-    background-color: #e3f2fd;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Estilizando o botão de salvar */
+/* Botão de salvar */
 .btn-submit {
-    background-color: #FF5733; /* Vermelho nos botões */
+    background-color: #f64f59; /* Vermelho no botão */
     color: #fff;
-    padding: 12px 20px;
+    padding: 15px;
     font-size: 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
+    font-weight: bold;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-submit:hover {
-    background-color: #C0392B; /* Tom mais escuro de vermelho no hover */
+    background-color: #c53743; /* Tom mais escuro no hover */
+    transform: translateY(-3px);
 }
 
-/* Estilo para o botão de voltar */
+.btn-submit:active {
+    transform: scale(0.95);
+}
+
+/* Botão de voltar */
 .btn-back {
     display: inline-block;
     margin-top: 20px;
-    color: #FF5733; /* Cor do botão voltar vermelha */
+    color: #00d9a5; /* Verde azulado */
     font-size: 16px;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .btn-back:hover {
     text-decoration: underline;
+    color: #00b4d8; /* Azul mais claro no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15%; /* Reduz o padding em telas menores */
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Ajusta o tamanho do título */
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 14px;
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-back {
+        font-size: 14px;
+    }
 }
