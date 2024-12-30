@@ -24,13 +24,18 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px); /* Efeito de vidro fosco */
-    width: 90%;
-    max-width: 600px;
+    max-width: 900px;
     border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Título */
 h1 {
+    margin: 0;
+    color: white;
+    font-size: 3em;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 9px 15px rgba(0, 0, 0, 0.2); /* Sombra do texto */
@@ -38,13 +43,11 @@ h1 {
     text-align: center;
 }
 
-/* Texto explicativo */
-p {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-shadow: 0 9px 15px rgba(0, 0, 0, 0.2); /* Sombra do texto */
-    position:relative;
-    text-align: center;
+h2 {
+    font-size: 2em;
+    color: white;
+    font-weight: lighter;
+    margin-bottom: 30px;
 }
 
 /* Botões principais */
@@ -52,18 +55,43 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center; /* Alinha os botões ao centro */
-    width: 100%; /* Garante alinhamento central em telas menores */
-
 }
 
+.menu-option {
+    margin-top: 15px;
+    border: 1px solid #0DCAF0;
+    padding: 20px;
+    width: 600px;
+    color: white;
+    font-size: 1.4em;
+    text-decoration: none;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s;
+}
 
-/* Botões principais */
-.buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinha os botões ao centro */
-    gap:calc(15px); /* Espaçamento consistente entre os botões */
-    width: 100%; /* Garante alinhamento central em telas menores */
+.menu-option:hover {
+    transform: scale(1.01);
+    border-color: transparent;
+}
+
+.menu-option::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #130457, #12c2e9);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.menu-option:hover::before {
+    opacity: 1;
+    border: none;
 }
 
 /* Botões gerais */
@@ -75,31 +103,30 @@ p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center; /* Centraliza o texto dentro do botão */
     width: 100%; /* Faz os botões ocuparem a largura disponível */
-    height: 60px;
-    max-width: 600px; /* Limita a largura máxima */
-    
+    height: 60px;  
 }
 
 /* Botão de logout */
 .logout-container {
-    margin-top: 30px; /* Espaçamento extra */
     display: block;
     width: 220px;
-    margin: 30px auto 0;
+    margin: 50px auto 0;
 }
 
 .logout-btn {
     background-color: #f64f59; /* Cor forte para logout */
+    margin-top: 30px; /* Espaçamento extra */
     color: #fff;
     padding: 12px 25px;
-    font-size: 1rem;
-    border-radius: 50px;
+    font-size: 1em;
+    border-radius: 10px;
     font-weight: bold;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: background 0.4s ease, transform 0.3s ease;
+    transition: 0.4s ease, transform 0.3s ease;
     text-align: center;
     width: 100%; /* Faz o botão ocupar a largura disponível */
     max-width: 350px; /* Limita a largura máxima */
+    text-decoration: none;
 }
 
 .logout-btn:hover {
@@ -114,12 +141,18 @@ p {
 
 @media (max-width: 768px) {
     .container {
-        padding: 15%; /* Reduz o padding em telas menores */
+        padding: 50px 30px; /* Reduz o padding em telas menores */
         width: 100%; /* Garante o uso completo da largura */
     }
 
+    .buttons {
+        width: 100%;
+    }
+    .menu-option {
+        width: 100%;
+    }
     h1 {
-        font-size: 1.5rem; /* Ajusta o tamanho do título */
+        font-size: 2.5em; /* Ajusta o tamanho do título */
     }
 
     p {
@@ -133,6 +166,6 @@ p {
 
     .logout-btn {
         padding: 10px 20px; /* Reduz o padding do botão logout */
-        font-size: 0.5rem; /* Ajusta o tamanho do texto */
+        font-size: 1em; /* Ajusta o tamanho do texto */
     }
 }

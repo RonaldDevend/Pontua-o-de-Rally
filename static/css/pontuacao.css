@@ -10,11 +10,11 @@ body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
 }
 
 /* Container principal */
@@ -23,25 +23,23 @@ body {
     max-width: 900px;
     margin: 50px auto;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease-in-out;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-}
-
 /* Títulos */
 h1, h2 {
+    font-size: 2.5rem;
+    color: #fff;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.081);
 }
 
 /* Estilo do formulário */
@@ -50,69 +48,69 @@ form {
 }
 
 label {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin-bottom: 1px;
+    margin-bottom: 8px;
     display: block;
     color: #ddd;
 }
 
-input[type="text"], input[type="number"] {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(5px);
+input {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 2px solid rgba(255, 255, 255, 0.2);
+   border-radius: 8px;
+   font-size: 1rem;
+   background: rgba(255, 255, 255, 0.1);
+   color: #fff;
+   transition: all 0.3s ease-in-out;
+   backdrop-filter: blur(5px);
 }
 
-input[type="text"]:focus, input[type="number"]:focus {
-    border-color: #FF5F6D;
-    outline: none;
-    background-color: rgba(255, 95, 109, 0.1);
+input::placeholder {
+   color: lightgray;
 }
 
-/* Botão de adicionar pontuação */
+input:focus {
+   border-color: #FF5F6D;
+   outline: none;
+   background-color: rgba(255, 95, 109, 0.1);
+}
+
+/* Botão de adicionar meta */
 button.submit-btn {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.4s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    max-width: 600px; /* Limita a largura máxima */
-    position: relative;
-    left: 320px;
 }
 
 button.submit-btn:hover {
-    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(194, 194, 194, 0.3);
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
+    transform: scale(1.01);
 }
 
 button.submit-btn:active {
     transform: scale(0.98);
 }
 
-/* Lista de pontuação */
+/* Lista de metas */
 .meta-list {
     list-style-type: none;
     padding-left: 0;
 }
 
 .meta-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */;
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
@@ -126,104 +124,94 @@ button.submit-btn:active {
 }
 
 .meta-item:hover {
-    transform: scale(1.02);
+    transform: scale(1.007);
 }
 
 .meta-text {
     font-size: 1.2rem;
-    color: #fff;
+    color: white; /* Cor preta no nome e pontuação */
+    flex-grow: 1;
 }
 
 /* Ações de editar/excluir */
+.actions {
+    display: flex;
+    justify-content: flex-end; /* Ações à direita */
+    gap: 10px;
+}
+
 .actions a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    margin-right: 15px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .actions a:hover {
     color: #ffffff;
 }
 
+.editar:hover {
+    color: rgb(255, 236, 125);
+}
+
+.deletar:hover {
+    color: rgb(255, 156, 156);
+}
+
 /* Botão de voltar para a home */
+.centralizarbtn {
+    display: flex;
+    justify-content: center;
+}
 .back-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */
+    background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     color: #fff;
     padding: 15px 25px;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 10px;
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
     transition: all 0.3s ease;
-    max-width: 600px; /* Limita a largura máxima */
-    position: relative;
-    left: 500px;
 }
 
 .back-btn:hover {
     background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(194, 194, 194, 0.3);
+    transform: scale(1.01);
 }
 
 .back-btn:active {
     transform: scale(0.98);
 }
 
-/* Estilos de exclusão */
-.delete {
-    color: #ffffff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
 
-.delete:hover {
-    color: #ffffff;
-}
-
+/* Responsividade */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
     }
 
-    button.submit-btn, .back-btn {
-        max-width: 100%;
-        left: 0;
+    h1, h2 {
+        font-size: 2rem;
     }
 
     .meta-item {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Exibe os itens em linha */
+        justify-content: space-between;
+        gap: 20px;
     }
 
-    label {
-        font-size: 1.2rem;
-    }
-
-    input[type="text"], input[type="number"], button.submit-btn {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    h1, h2 {
-        font-size: 1.5rem;
-    }
-
-    label {
+    .meta-text {
         font-size: 1rem;
     }
 
-    input[type="text"], input[type="number"], button.submit-btn {
-        font-size: 0.8rem;
-        padding: 10px;
+    .actions {
+        justify-content: flex-end;
     }
 
-    .meta-item {
-        padding: 10px;
+    input[type="text"], input[type="number"], button.submit-btn {
+        font-size: 1rem;
     }
 }

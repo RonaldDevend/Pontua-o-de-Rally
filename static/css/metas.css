@@ -31,10 +31,6 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-}
-
 /* Títulos */
 h1, h2 {
     font-size: 2.5rem;
@@ -43,7 +39,7 @@ h1, h2 {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.081);
 }
 
 /* Estilo do formulário */
@@ -59,23 +55,27 @@ label {
     color: #ddd;
 }
 
-input[type="text"], input[type="number"] {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */;
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-    backdrop-filter: blur(5px);
+input {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 2px solid rgba(255, 255, 255, 0.2);
+   border-radius: 8px;
+   font-size: 1rem;
+   background: rgba(255, 255, 255, 0.1);
+   color: #fff;
+   transition: all 0.3s ease-in-out;
+   backdrop-filter: blur(5px);
 }
 
-input[type="text"]:focus, input[type="number"]:focus {
-    border-color: #FF5F6D;
-    outline: none;
-    background-color:white;
+input::placeholder {
+   color: lightgray;
+}
+
+input:focus {
+   border-color: #FF5F6D;
+   outline: none;
+   background-color: rgba(255, 95, 109, 0.1);
 }
 
 /* Botão de adicionar meta */
@@ -85,7 +85,7 @@ button.submit-btn {
     background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
@@ -96,7 +96,7 @@ button.submit-btn {
 
 button.submit-btn:hover {
     background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
-    transform: translateY(-5px) scale(1.05);
+    transform: scale(1.01);
 }
 
 button.submit-btn:active {
@@ -124,7 +124,7 @@ button.submit-btn:active {
 }
 
 .meta-item:hover {
-    transform: scale(1.02);
+    transform: scale(1.007);
 }
 
 .meta-text {
@@ -137,28 +137,40 @@ button.submit-btn:active {
 .actions {
     display: flex;
     justify-content: flex-end; /* Ações à direita */
+    gap: 10px;
 }
 
 .actions a {
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    margin-left: 15px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .actions a:hover {
     color: #ffffff;
 }
 
+.editar:hover {
+    color: rgb(255, 236, 125);
+}
+
+.deletar:hover {
+    color: rgb(255, 156, 156);
+}
+
 /* Botão de voltar para a home */
+.centralizarbtn {
+    display: flex;
+    justify-content: center;
+}
 .back-btn {
     display: inline-block;
     background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
     color: #fff;
     padding: 15px 25px;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 10px;
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
@@ -167,7 +179,7 @@ button.submit-btn:active {
 
 .back-btn:hover {
     background: linear-gradient(135deg, #130457, #12c2e9); /* Inversão do gradiente */  
-    transform: translateY(-3px);
+    transform: scale(1.01);
 }
 
 .back-btn:active {
@@ -186,12 +198,13 @@ button.submit-btn:active {
     }
 
     .meta-item {
-        flex-direction: row; /* Exibe os itens em linha */
+        flex-direction: column; /* Exibe os itens em linha */
         justify-content: space-between;
+        gap: 20px;
+
     }
 
     .meta-text {
-        color: #000; /* Preto para o texto */
         font-size: 1rem;
     }
 

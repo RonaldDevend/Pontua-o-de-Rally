@@ -20,7 +20,7 @@ body {
 /* Container principal */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 50px auto;
     padding: 30px;
     background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
@@ -30,11 +30,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
     transition: transform 0.3s ease-in-out;
 }
-
-.container:hover {
-    transform: translateY(-5px); /* Efeito de levitação */
-}
-
 /* Títulos */
 h1 {
     
@@ -63,7 +58,6 @@ table {
     margin-bottom: 30px;
     border-radius: 10px;
     overflow: hidden; /* Para aplicar bordas arredondadas */
-    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2); /* Sombra para destacar a tabela */
 }
 
 table th,
@@ -110,13 +104,7 @@ table td:first-child {
 
 /* Efeitos de hover na tabela */
 table tr:hover td {
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.02); /* Leve aumento */
-    transition: all 0.3s ease-in-out;
-}
-
-.buttom{
-    text-align: center; 
+    cursor: default;
 }
 
 /* Botão de voltar para a home */
@@ -124,11 +112,11 @@ table tr:hover td {
     display: block;
     width: 220px;
     margin: 30px auto 0;
-    background: linear-gradient(135deg, #FF5F6D, #FFC371); /* Gradiente vibrante */
+    background-image: linear-gradient(to right, #130457, #12c2e9); /* Gradiente vibrante */
     color: #fff;
     padding: 15px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 10px;
     font-weight: bold;
     text-decoration: none;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -136,8 +124,7 @@ table tr:hover td {
 }
 
 .back-btn:hover {
-    background: linear-gradient(135deg, #FFC371, #FF5F6D); /* Inversão do gradiente */
-    transform: translateY(-5px);
+    transform: scale(1.01);
 }
 
 .back-btn:active {
@@ -151,19 +138,25 @@ table tr:hover td {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2em;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.5em;
     }
 
     table th, table td {
         padding: 10px;
+        font-size: 1.2em; /* Ajuste menor para todas as colunas */
     }
 
+    /* Garantindo que a primeira coluna também reduza */
+    table td:first-child {
+        font-size: 1.2em; /* Diminuição específica */
+    }
+    
     .back-btn {
         width: 180px;
-        font-size: 1rem;
+        font-size: 1em;
     }
 }

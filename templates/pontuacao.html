@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pontuação</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pontuacao.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 style="color: white;">Pontuação das Tribos</h1>
+        <h1>Pontuação das Tribos</h1>
         
         <form method="POST">
             <label for="grupo">Grupo:</label>
             <input type="text" name="grupo" required>
             <label for="pontos">Pontos:</label>
             <input type="number" name="pontos" required>
-            <button type="submit" class="submit-btn">Adicionar Pontuação</button>
+            <div class="centralizarbotaosubmit">
+                <button type="submit" class="submit-btn">ADICIONAR PONTUAÇÃO</button>
+            </div>
         </form>
 
-        <h2 style="color: white;">Pontuação Existente</h2>
+        <h2>Pontuação Existente</h2>
         <ul class="meta-list">
             {% for pontuacao in pontuacoes %}
                 <li class="meta-item">
                     <span class="meta-text">{{ pontuacao.grupo }} - {{ pontuacao.pontos }} pontos</span>
                     <div class="actions">
-                        <a href="{{ url_for('editar_pontuacao', id=pontuacao.id) }}">Editar</a> | 
-                        <a href="{{ url_for('excluir_pontuacao', id=pontuacao.id) }}" class="delete">Excluir</a>
+                        <a href="{{ url_for('editar_pontuacao', id=pontuacao.id) }}"><span class="editar">Editar</span></a>
+                        <p>|</p>
+                        <a href="{{ url_for('excluir_pontuacao', id=pontuacao.id) }}" class="delete"><span class="deletar">Excluir</span></a>
                     </div>
                 </li>
             {% endfor %}
         </ul>
 
-        <a href="{{ url_for('home') }}" class="back-btn">Voltar para a Home</a>
+        <div class="centralizarbtn">
+            <a href="{{ url_for('home') }}" class="back-btn">Voltar para a Home</a>
+        </div>
     </div>
 </body>
 </html>
