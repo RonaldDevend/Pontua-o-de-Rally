@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+
 import os
+
 
 app = Flask(__name__)
 
@@ -18,22 +20,29 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)  # Inicializa o banco de dados
 
 # Modelo da tabela Metas
+
+
 class Meta(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     descricao = db.Column(db.String(200), nullable=False)
     pontuacao = db.Column(db.Integer, nullable=False)
 
-    def __repr__(self):
-        return f"<Meta {self.descricao} - {self.pontuacao}>"
-
 # Modelo da tabela Pontuacoes
+
+
+def __repr__(self):
+    return f"<Meta {self.descricao} - {self.pontuacao}>"
+
+
 class Pontuacao(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     grupo = db.Column(db.String(50), nullable=False)
     pontos = db.Column(db.Integer, default=0)
 
-    def __repr__(self):
-        return f"<Pontuacao {self.grupo} - {self.pontos}>"
+
+def __repr__(self):
+    return f"<Pontuacao {self.grupo} - {self.pontos}>"
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -58,12 +67,19 @@ def logout():
     return redirect(url_for("login"))
 
 
+
 @app.route("/")
 @app.route("/home")
 def home():
     if "usuario" not in session:  # Verifica se o usuário está logado
         return redirect(url_for("login"))  # Redireciona para a página de login
     return render_template("home.html")
+
+    return """
+    <a href="/metas">Gerenciar Metas</a><br>
+    <a href="/pontuacao">Gerenciar Pontuação</a><br>
+    <a href="/resultados">Ver Resultados</a>
+    """
 
 
 @app.route("/metas", methods=['GET', 'POST'])
@@ -114,8 +130,6 @@ def pontuacao():
         nova_pontuacao = Pontuacao(grupo=grupo, pontos=pontos)
         db.session.add(nova_pontuacao)
         db.session.commit()
-
-        #redddd
 
         # Redireciona para a página de pontuação
         return redirect(url_for('pontuacao'))
