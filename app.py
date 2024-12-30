@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = "segredo_super_secreto"
 
 USUARIOS = {
-    "admin@fju.com": "123",  # Email e senha para autenticação
+    "admin@rally.com": "123",  # Email e senha para autenticação
 }
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///meu_banco.db'  # Banco SQLite
